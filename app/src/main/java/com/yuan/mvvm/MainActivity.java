@@ -3,11 +3,17 @@ package com.yuan.mvvm;
 import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
 
 import com.yuan.mvvm.databinding.ActivityMainBinding;
+import com.yuan.mvvm.databinding.adapter.User2Adapter;
 import com.yuan.mvvm.databinding.bean.User;
+import com.yuan.mvvm.databinding.bean.User2;
 import com.yuan.mvvm.databinding.util.ImageUtil;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     String imageUrl = "http://ww1.sinaimg.cn/large/0065oQSqly1g2pquqlp0nj30n00yiq8u.jpg";
@@ -29,6 +35,20 @@ public class MainActivity extends AppCompatActivity {
 
         // ImageUtil.loadImage(mBinding.ivImg, imageUri3);
         mBinding.setImgUrl(imageUrl3);
+
+        List<User2> user2List = new ArrayList<>();
+        for (int i = 0; i < 20; i++) {
+            User2 user2 = new User2();
+            user2.name.set("张" + i + "三");
+            user2.age.set(i);
+            user2.isStudent.set(i % 3 == 0);
+            user2List.add(user2);
+        }
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplication(), LinearLayoutManager.VERTICAL, false);
+        mBinding.rvUser2.setLayoutManager(linearLayoutManager);
+        mBinding.rvUser2.setAdapter(new User2Adapter(user2List));
+        // Caused by: org.apache.xerces.impl.io.MalformedByteSequenceException: Invalid byte 3 of 3-byte UTF-8 sequence.
+
     }
 
     public void hideClick(View view) {
