@@ -1,16 +1,17 @@
 package com.yuan.mvvm;
 
-import android.databinding.DataBindingUtil;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.yuan.mvvm.databinding.ActivityMainBinding;
 import com.yuan.mvvm.databinding.adapter.User2Adapter;
 import com.yuan.mvvm.databinding.bean.User;
 import com.yuan.mvvm.databinding.bean.User2;
-import com.yuan.mvvm.databinding.util.ImageUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
             user2.isStudent.set(i % 3 == 0);
             user2List.add(user2);
         }
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplication(), LinearLayoutManager.VERTICAL, false);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplication(), RecyclerView.VERTICAL, false);
         mBinding.rvUser2.setLayoutManager(linearLayoutManager);
         mBinding.rvUser2.setAdapter(new User2Adapter(user2List));
         // Caused by: org.apache.xerces.impl.io.MalformedByteSequenceException: Invalid byte 3 of 3-byte UTF-8 sequence.

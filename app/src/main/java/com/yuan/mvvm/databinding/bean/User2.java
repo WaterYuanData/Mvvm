@@ -1,8 +1,8 @@
 package com.yuan.mvvm.databinding.bean;
 
-import android.databinding.ObservableBoolean;
-import android.databinding.ObservableField;
-import android.databinding.ObservableInt;
+import androidx.databinding.ObservableBoolean;
+import androidx.databinding.ObservableField;
+import androidx.databinding.ObservableInt;
 
 public class User2 {
     public final ObservableField<String> name = new ObservableField<>();
