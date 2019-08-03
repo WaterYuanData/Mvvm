@@ -1,4 +1,4 @@
-package com.yuan.mvvm;
+package com.yuan.mvvm.databinding;
 
 import android.os.Bundle;
 import android.view.View;
@@ -8,7 +8,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.yuan.mvvm.databinding.ActivityMainBinding;
+import com.yuan.mvvm.R;
 import com.yuan.mvvm.databinding.adapter.User2Adapter;
 import com.yuan.mvvm.databinding.bean.User;
 import com.yuan.mvvm.databinding.bean.User2;
