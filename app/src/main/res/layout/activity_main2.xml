@@ -64,7 +64,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="显示1"
-            android:text="@{student1[0].name}"
+            android:text='@{student1[0].name+" "+student1[1].name}'
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/bt_update_student_info" />
@@ -74,7 +74,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="显示2"
-            android:text="@{student2[0].name}"
+            android:text='@{student2[0].name+" "+student2[1].name}'
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_1" />
