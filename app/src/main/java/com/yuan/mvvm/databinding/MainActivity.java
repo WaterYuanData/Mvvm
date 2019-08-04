@@ -25,16 +25,25 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // 绑定xml
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+
+        // 通过binding将数据设置到xml
         User user = new User();
         user.setName("小样儿");
         user.setId(2);
         mBinding.setUser(user);
 
-        // xml中绑定Activity中的方法
+        /*
+        通过binding将点击事件的响应方法设置到xml，
+        与普通onClick的区别是：该方式的响应方法可以在非Activity的普通类中实现
+        使用：android:onClick="@{mActivity.hideClick}"
+         **/
         mBinding.setMActivity(this);
 
-        // ImageUtil.loadImage(mBinding.ivImg, imageUri3);
+        // ImageUtil.loadImage(mBinding.ivImg, imageUri3); // 测试ImageUtil.loadImage()方法
+        // todo BindingAdapter的使用
         mBinding.setImgUrl(imageUrl3);
 
         List<User2> user2List = new ArrayList<>();

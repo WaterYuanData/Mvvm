@@ -4,14 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ObservableArrayList;
 import androidx.databinding.ObservableList;
-import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import android.os.Bundle;
-import android.os.Handler;
 import android.os.SystemClock;
-import android.util.Log;
 import android.view.View;
 
 import com.yuan.mvvm.R;
@@ -19,7 +16,6 @@ import com.yuan.mvvm.databinding.ActivityMain2Binding;
 import com.yuan.mvvm.viewmodel.bean.Student;
 import com.yuan.mvvm.viewmodel.bean.StudentViewModel;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Main2Activity extends AppCompatActivity {
@@ -59,11 +55,11 @@ public class Main2Activity extends AppCompatActivity {
         */
         mStudentViewModel.getStudents().observe(this, new Observer<List<Student>>() {
             @Override
-            public void onChanged(List<Student> students) {
+            public void onChanged(List<Student> studentList) {
                 // 观察到数据变化，将新数据设置到xml进行显示
                 String string = "";
-                for (int i = 0; i < students.size(); i++) {
-                    string = string + "\n" + students.get(i).toString();
+                for (int i = 0; i < studentList.size(); i++) {
+                    string = string + "\n" + studentList.get(i).toString();
                 }
                 // 仅绑定id，通过set赋值
                 mBinding.tvStudentInfo.setText(string);
@@ -72,42 +68,14 @@ public class Main2Activity extends AppCompatActivity {
 'setStudent1(androidx.databinding.ObservableList<com.yuan.mvvm.viewmodel.bean.Student>)' in
 'cannot be applied to '(java.util.List<com.yuan.mvvm.viewmodel.bean.Student>)'
                 * */
-                // mBinding.setStudent1(students);
+                // mBinding.setStudent1(studentList);
                 // 绑定variable，通过'@{student2[0].name+" "+student2[1].name}'赋值
-                mBinding.setStudent2(students);
+                mBinding.setStudent2(studentList);
             }
         });
     }
 
     public void updateStudentInfo(View view) {
-        //        final MutableLiveData<List<Student>> students = mStudentViewModel.getStudents();
-        //        // List<Student> studentList = students.getValue(); // 得到null
-        //        final List<Student> studentList = new ArrayList<>();
-        //        final Student student = new Student();
-        //        student.setName("张三" + SystemClock.currentThreadTimeMillis() % 9999);
-        //        student.setId(((int) (SystemClock.currentThreadTimeMillis() % 99)));
-        //        studentList.add(0, student);
-        //        students.setValue(studentList);
-        //
-        //        new Handler().postDelayed(new Runnable() {
-        //            @Override
-        //            public void run() {
-        //                Student student = new Student();
-        //                student.setName("李四" + SystemClock.currentThreadTimeMillis() % 5555);
-        //                student.setId(((int) (SystemClock.currentThreadTimeMillis() % 55)));
-        //                studentList.add(1, student);
-        //                students.postValue(studentList);
-        //            }
-        //        }, 1500);
-        //
-        //        mStudent_binding.clear();
-        //        mStudent_binding.addAll(studentList);
-        //        // 因为延迟，studentList.size()永远是1导致mStudent_binding.size()也永远是1
-        //        for (int i = 0; i < mStudent_binding.size(); i++) {
-        //            Log.d(TAG, "updateStudentInfo: " + mStudent_binding.get(i));
-        //        }
-
-        // 点击更新数据属于业务逻辑应放在ViewModel中处理
         mStudentViewModel.update();
     }
 }

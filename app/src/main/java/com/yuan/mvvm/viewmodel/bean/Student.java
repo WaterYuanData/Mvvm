@@ -3,7 +3,7 @@ package com.yuan.mvvm.viewmodel.bean;
 public class Student {
     private static final String TAG = "Student";
 
-    private String name;
+    private String name = "";
     private int id;
 
     public String getName() {

@@ -55,6 +55,7 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/bt_id" />
 
+        <!-- BindingAdapter的使用 -->
         <ImageView
             android:id="@+id/iv_img"
             myImg="@{imgUrl}"

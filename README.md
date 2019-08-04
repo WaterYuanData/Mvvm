@@ -1,7 +1,8 @@
 # Mvvm
 1. Inherited注解的练习  
 2. DataBinding的使用  
-RecyclerView中使用DataBinding
+>RecyclerView中使用DataBinding
+
 3. LiveData和ViewModel的混合使用    
 ActivityLifecycleCallbacks  
 getApplicationContext就是Application本身    
@@ -16,5 +17,11 @@ ViewModel对象持有MutableLiveData对象，
 将更新后的数据通过binding设置到xml中进行显示，
 更新逻辑在VM层中进行，V层只是显示，
 ```
+
+4. MutableLiveData与ObservableList的应用场景？    
+
+5. [Demo](https://github.com/WaterYuanData/Mvvm)
+
+6. System.currentTimeMillis() 与 SystemClock.currentThreadTimeMillis() 的区别
 
  
