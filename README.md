@@ -20,8 +20,11 @@ ViewModel对象持有MutableLiveData对象，
 
 4. MutableLiveData与ObservableList的应用场景？    
 
-5. [Demo](https://github.com/WaterYuanData/Mvvm)
+5. System.currentTimeMillis() 与 SystemClock.currentThreadTimeMillis() 的区别
 
-6. System.currentTimeMillis() 与 SystemClock.currentThreadTimeMillis() 的区别
+6. [Demo](https://github.com/WaterYuanData/Mvvm)    
+获取Bing每日一图并显示   
+[Android官方架构组件ViewModel+LiveData+DataBinding架构属于自己的MVVM](https://www.cnblogs.com/dev-njp/p/8783341.html)    
+[解析网络接口返回信息](https://cn.bing.com/HPImageArchive.aspx?format=js&idx=1&n=1)
 
  
