@@ -27,4 +27,4 @@ ViewModel对象持有MutableLiveData对象，
 [Android官方架构组件ViewModel+LiveData+DataBinding架构属于自己的MVVM](https://www.cnblogs.com/dev-njp/p/8783341.html)    
 [解析网络接口返回信息](https://cn.bing.com/HPImageArchive.aspx?format=js&idx=1&n=1)
 
-![Demo效果图](https://github.com/WaterYuanData/Mvvm/tree/master/mvvmdemo/src/main/assets/loadNextPic.gif)
+![Demo效果图](https://upload-images.jianshu.io/upload_images/9601136-95aa734a2335d0b5.gif?imageMogr2/auto-orient/strip)
